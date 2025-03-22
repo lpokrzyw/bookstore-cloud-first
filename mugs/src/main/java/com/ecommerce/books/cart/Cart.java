@@ -1,4 +1,4 @@
-package com.thousandeyes.practice.mugs.cart;
+package com.ecommerce.books.cart;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

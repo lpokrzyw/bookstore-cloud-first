@@ -1,4 +1,4 @@
-package com.thousandeyes.practice.mugs.mugs;
+package com.ecommerce.books.books;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -7,16 +7,16 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "MUGS")
-public class Mug {
+public class Book {
     @Id
     private int id;
     @Column(name = "PRICE", nullable = false)
     private double price;
 
-    public Mug() {
+    public Book() {
     }
 
-    public Mug(int id, double price) {
+    public Book(int id, double price) {
         super();
         this.id = id;
         this.price = price;
