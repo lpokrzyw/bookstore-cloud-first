@@ -1,13 +1,13 @@
-package com.thousandeyes.practice.mugs;
+package com.ecommerce.books;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MugsApplication {
+public class BooksApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MugsApplication.class, args);
+		SpringApplication.run(BooksApplication.class, args);
 	}
 
 }

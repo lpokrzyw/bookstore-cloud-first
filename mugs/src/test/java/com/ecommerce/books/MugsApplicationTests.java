@@ -1,10 +1,10 @@
-package com.thousandeyes.practice.mugs;
+package com.ecommerce.books;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class MugsApplicationTests {
+class BooksApplicationTests {
 
 	@Test
 	void contextLoads() {
