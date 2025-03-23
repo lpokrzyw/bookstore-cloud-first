@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.thousandeyes.practice</groupId>
-	<artifactId>mugs</artifactId>
+	<artifactId>books</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>mugs</name>
 	<description>Simple web app for AppD Te Challenge</description>
