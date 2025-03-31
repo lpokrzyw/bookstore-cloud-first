@@ -43,7 +43,7 @@ public class CartController {
     public String processOrder(SessionStatus sessionStatus) {
         sessionStatus.setComplete();
         updateCartTotal(0);
-        return "redirect:/";
+        return "redirect:/goodbye";
     }
 
     @RequestMapping(path = "/cart/addToCart")
@@ -54,5 +54,10 @@ public class CartController {
         updateCartTotal(retrieveCart(CART_ID).getCartTotal() + bookPrice);
 
         return "redirect:/books";
+    }
+
+    @GetMapping(path = "/goodbye")
+    public String showGoodbyePage() {
+        return "goodbye";
     }
 }
