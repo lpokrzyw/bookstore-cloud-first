@@ -18,6 +18,8 @@ public class BookController {
     public String showBooksPage() {
         return "books";
     }
+    @Autowired
+    private BookRepository bookRepository;
     @Autowired private BookService bookService;
     @Autowired private CommentService commentService;
     @Autowired private RatingService ratingService;
@@ -46,7 +48,7 @@ public class BookController {
 
     @PostMapping("/{id}/rate")
     public String addRating(@PathVariable int id, @ModelAttribute Rating newRating) {
-        ratingService.addRating(id, newRating.getStars(), newRating.getUsername());
+        ratingService.addRating(id, newRating.getScore(), newRating.getUsername());
         return "redirect:/books/" + id;
     }
 }
