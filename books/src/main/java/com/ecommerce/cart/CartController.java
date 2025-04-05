@@ -1,29 +1,37 @@
-package com.ecommerce.books.cart;
+package com.ecommerce.cart;
 
-import com.ecommerce.books.books.Book;
-import com.ecommerce.books.books.BookRepository;
+import com.ecommerce.books.Book;
+import com.ecommerce.books.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.support.SessionStatus;
 
+import java.util.Optional;
+
 @Controller
 @SessionAttributes("order")
 public class CartController {
-    private final int CART_ID = 1; // hard coded for now
+    private final int CART_ID = 1;
 
     @Autowired
     private CartRepository cartRepository;
     @Autowired
     private BookRepository bookRepository;
 
-    public Book retrieveBook(int id) {
-        return bookRepository.findBookById(id);
+    public Optional<Book> retrieveBook(int id) {
+        return Optional.ofNullable(bookRepository.findById(id));
     }
 
     public Cart retrieveCart(int id) {
-        return cartRepository.findCartById(id);
+        // If the cart does not exist, create a new one and save it
+        return cartRepository.findById(id).orElseGet(() -> {
+            Cart newCart = new Cart();
+            newCart.setCartTotal(0.0); // Initialize the cart total to 0
+            cartRepository.save(newCart); // Save the newly created cart
+            return newCart;
+        });
     }
 
     @GetMapping(path = "/cart")
@@ -50,8 +58,19 @@ public class CartController {
     public String addToCart(Model model, @RequestParam(value = "code", defaultValue = "") String code) {
 
         model.addAttribute("productCode", code);
-        double bookPrice = retrieveBook(Integer.valueOf(code)).getPrice();
-        updateCartTotal(retrieveCart(CART_ID).getCartTotal() + bookPrice);
+        int bookId = Integer.valueOf(code);
+
+        Optional<Book> optionalBook = retrieveBook(bookId);
+
+        if (optionalBook.isPresent()) {
+            // Book exists, update the cart total
+            double bookPrice = optionalBook.get().getPrice();
+            updateCartTotal(retrieveCart(CART_ID).getCartTotal() + bookPrice);
+        } else {
+            // Book not found, handle the error case (optional, can be an error message)
+            model.addAttribute("error", "Book not found with ID: " + bookId);
+            return "error";
+        }
 
         return "redirect:/books";
     }

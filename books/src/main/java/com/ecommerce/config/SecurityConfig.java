@@ -1,6 +1,5 @@
-package com.ecommerce.books.config;
+package com.ecommerce.config;
 
-import com.ecommerce.books.users.CustomUserDetailsService;
 import org.springframework.context.annotation.*;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
