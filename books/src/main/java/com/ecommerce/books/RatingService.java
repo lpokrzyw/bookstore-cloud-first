@@ -13,11 +13,11 @@ public class RatingService {
     @Autowired
     private BookRepository bookRepository;
 
-    public void addRating(int bookId, int stars, String username) {
+    public void addRating(int bookId, int score, String username) {
         Book book = bookRepository.findById(bookId);
         Rating rating = new Rating();
         rating.setBook(book);
-        rating.setStars(stars);
+        rating.setScore(score);
         rating.setUsername(username);
         ratingRepository.save(rating);
     }
@@ -26,6 +26,6 @@ public class RatingService {
         List<Rating> ratings = ratingRepository.findByBookId(bookId);
         if (ratings.isEmpty()) return null;
 
-        return ratings.stream().mapToInt(Rating::getStars).average().orElse(0);
+        return ratings.stream().mapToInt(Rating::getScore).average().orElse(0);
     }
 }

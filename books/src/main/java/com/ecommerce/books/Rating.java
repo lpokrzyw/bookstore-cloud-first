@@ -8,10 +8,10 @@ public class Rating {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;  // Change to int
+    private int id;
 
     private String username;
-    private int stars;
+    private int score;
 
     @ManyToOne
     @JoinColumn(name = "book_id")
@@ -34,12 +34,12 @@ public class Rating {
         this.username = username;
     }
 
-    public int getStars() {
-        return stars;
+    public int getScore() {
+        return score;
     }
 
-    public void setStars(int stars) {
-        this.stars = stars;
+    public void setScore(int score) {
+        this.score = score;
     }
 
     public Book getBook() {

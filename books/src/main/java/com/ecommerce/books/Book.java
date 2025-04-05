@@ -1,9 +1,9 @@
 package com.ecommerce.books;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "BOOKS")
@@ -22,6 +22,12 @@ public class Book {
 
     @Column(name = "PRICE", nullable = false)
     private double price;
+
+    @OneToMany(mappedBy = "book", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Comment> comments = new ArrayList<>();
+
+    @OneToMany(mappedBy = "book", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Rating> ratings = new ArrayList<>();
 
     public Book() {
     }
@@ -98,5 +104,16 @@ public class Book {
                 ", description='" + description + '\'' +
                 ", price=" + price +
                 '}';
+    }
+
+    public double getAverageRating() {
+        return ratings.stream()
+                .mapToInt(Rating::getScore)
+                .average()
+                .orElse(0.0);
+    }
+
+    public List<Comment> getComments() {
+        return comments;  // Return the list of comments
     }
 }
