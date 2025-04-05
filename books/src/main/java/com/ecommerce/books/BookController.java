@@ -1,5 +1,9 @@
 package com.ecommerce.books;
 
+import com.ecommerce.comments.Comment;
+import com.ecommerce.comments.CommentService;
+import com.ecommerce.ratings.Rating;
+import com.ecommerce.ratings.RatingService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,17 +16,22 @@ import java.util.Optional;
 
 @Controller
 @RequestMapping(path = "/books")
-@SessionAttributes("order")
 public class BookController {
     @GetMapping
-    public String showBooksPage() {
+    public String showBooksPage(Model model) {
+        List<Book> books = bookRepository.findAll(); // Retrieve all books from the database
+        model.addAttribute("books", books);
         return "books";
     }
+
     @Autowired
     private BookRepository bookRepository;
-    @Autowired private BookService bookService;
-    @Autowired private CommentService commentService;
-    @Autowired private RatingService ratingService;
+    @Autowired
+    private BookService bookService;
+    @Autowired
+    private CommentService commentService;
+    @Autowired
+    private RatingService ratingService;
 
     @GetMapping("/{id}")
     public String bookDetails(@PathVariable int id, Model model, Principal principal) {

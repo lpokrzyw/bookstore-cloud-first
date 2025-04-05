@@ -1,28 +1,28 @@
-package com.ecommerce.books;
+package com.ecommerce.comments;
 
+import com.ecommerce.books.Book;
 import jakarta.persistence.*;
 import jakarta.persistence.Entity;
 
 @Entity
-public class Rating {
+public class Comment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     private String username;
-    private int score;
+    private String content;
 
     @ManyToOne
     @JoinColumn(name = "book_id")
     private Book book;
 
-    // Getters and Setters
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -34,12 +34,12 @@ public class Rating {
         this.username = username;
     }
 
-    public int getScore() {
-        return score;
+    public String getContent() {
+        return content;
     }
 
-    public void setScore(int score) {
-        this.score = score;
+    public void setContent(String content) {
+        this.content = content;
     }
 
     public Book getBook() {

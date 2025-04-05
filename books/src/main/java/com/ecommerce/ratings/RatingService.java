@@ -1,5 +1,7 @@
-package com.ecommerce.books;
+package com.ecommerce.ratings;
 
+import com.ecommerce.books.Book;
+import com.ecommerce.books.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

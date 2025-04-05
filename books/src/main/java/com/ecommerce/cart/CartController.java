@@ -6,12 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.bind.support.SessionStatus;
 
 import java.util.Optional;
 
 @Controller
-@SessionAttributes("order")
 public class CartController {
     private final int CART_ID = 1;
 
@@ -48,8 +46,7 @@ public class CartController {
     }
 
     @PostMapping(path = "/cart")
-    public String processOrder(SessionStatus sessionStatus) {
-        sessionStatus.setComplete();
+    public String processOrder() {
         updateCartTotal(0);
         return "redirect:/goodbye";
     }

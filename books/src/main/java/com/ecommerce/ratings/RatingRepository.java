@@ -1,4 +1,4 @@
-package com.ecommerce.books;
+package com.ecommerce.ratings;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
