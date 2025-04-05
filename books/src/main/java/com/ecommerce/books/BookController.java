@@ -1,5 +1,9 @@
 package com.ecommerce.books;
 
+import com.ecommerce.comments.Comment;
+import com.ecommerce.comments.CommentService;
+import com.ecommerce.ratings.Rating;
+import com.ecommerce.ratings.RatingService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +16,6 @@ import java.util.Optional;
 
 @Controller
 @RequestMapping(path = "/books")
-@SessionAttributes("order")
 public class BookController {
     @GetMapping
     public String showBooksPage(Model model) {

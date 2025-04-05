@@ -1,5 +1,7 @@
 package com.ecommerce.books;
 
+import com.ecommerce.comments.Comment;
+import com.ecommerce.ratings.Rating;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
