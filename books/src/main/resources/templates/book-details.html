@@ -48,12 +48,12 @@
                 <h3>Leave a Comment:</h3>
                 <form action="#" th:action="@{/view/books/{id}/comments(id=${book.id})}" method="post">
                     <div class="mb-3">
-                        <label for="userName" class="form-label">Name:</label>
-                        <input type="text" id="userName" name="userName" class="form-control" required>
+                        <label for="username" class="form-label">Name:</label>
+                        <input type="text" id="username" name="username" class="form-control" required>
                     </div>
                     <div class="mb-3">
-                        <label for="text" class="form-label">Comment:</label>
-                        <textarea id="text" name="text" class="form-control" required></textarea>
+                        <label for="content" class="form-label">Comment:</label>
+                        <textarea id="text" name="content" class="form-control" required></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Add Comment</button>
                 </form>
@@ -92,7 +92,7 @@
                     <p>No comments yet.</p>
                 </div>
                 <div th:each="comment : ${book.comments}">
-                    <p><strong th:text="${comment.userName}"></strong>: <span th:text="${comment.text}"></span></p>
+                    <p><strong th:text="${comment.username}"></strong>: <span th:text="${comment.content}"></span></p>
                 </div>
             </div>
         </div>
