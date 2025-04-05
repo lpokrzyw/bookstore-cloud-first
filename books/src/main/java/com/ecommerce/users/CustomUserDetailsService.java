@@ -1,4 +1,4 @@
-package com.ecommerce.books.users;
+package com.ecommerce.users;
 
 import org.springframework.security.core.userdetails.*;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

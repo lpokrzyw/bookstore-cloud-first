@@ -1,4 +1,4 @@
-package com.ecommerce.books.cart;
+package com.ecommerce.cart;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 public interface CartRepository extends JpaRepository<Cart, Integer> {

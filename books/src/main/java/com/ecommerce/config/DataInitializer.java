@@ -1,7 +1,7 @@
-package com.ecommerce.books.config;
+package com.ecommerce.config;
 
-import com.ecommerce.books.users.User;
-import com.ecommerce.books.users.UserRepository;
+import com.ecommerce.users.User;
+import com.ecommerce.users.UserRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
