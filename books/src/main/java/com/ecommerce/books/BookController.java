@@ -15,14 +15,20 @@ import java.util.Optional;
 @SessionAttributes("order")
 public class BookController {
     @GetMapping
-    public String showBooksPage() {
+    public String showBooksPage(Model model) {
+        List<Book> books = bookRepository.findAll(); // Retrieve all books from the database
+        model.addAttribute("books", books);
         return "books";
     }
+
     @Autowired
     private BookRepository bookRepository;
-    @Autowired private BookService bookService;
-    @Autowired private CommentService commentService;
-    @Autowired private RatingService ratingService;
+    @Autowired
+    private BookService bookService;
+    @Autowired
+    private CommentService commentService;
+    @Autowired
+    private RatingService ratingService;
 
     @GetMapping("/{id}")
     public String bookDetails(@PathVariable int id, Model model, Principal principal) {
