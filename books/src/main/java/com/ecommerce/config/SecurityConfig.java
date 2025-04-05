@@ -1,5 +1,6 @@
 package com.ecommerce.config;
 
+
 import org.springframework.context.annotation.*;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
@@ -21,10 +22,24 @@ public class SecurityConfig {
                         .requestMatchers(new AntPathRequestMatcher("/h2-console/**")).permitAll()
                         .anyRequest().authenticated()
                 )
-                .formLogin(withDefaults())
-                .logout(logout -> logout.logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/login?logout").permitAll())
-                .csrf(csrf -> csrf.disable())
-                .headers(headers -> headers.disable());
+                .formLogin(formLogin -> formLogin
+                        .defaultSuccessUrl("/home", true)
+                        .permitAll()
+                )
+                .logout(logout -> logout
+                        .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+                        .logoutSuccessUrl("/login?logout")
+                        .invalidateHttpSession(true)
+                        .deleteCookies("JSESSIONID")
+                        .permitAll()
+                )
+                .sessionManagement(session -> session
+                        .invalidSessionUrl("/login?invalid-session")
+                        .maximumSessions(1)
+                        .expiredUrl("/login?expired")
+                )
+                .csrf(csrf -> csrf.disable()) // not IN PROD - DLA BAZY h2
+                .headers(headers -> headers.disable()); // not IN PROD
         return http.build();
     }
 
