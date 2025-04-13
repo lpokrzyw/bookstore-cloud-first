@@ -45,7 +45,7 @@ public class BookViewController {
             Comment comment = new Comment();
             comment.setUsername(username);
             comment.setContent(content);
-            comment.setBook(book.get()); // przypisujemy książkę do komentarza
+            comment.setBook(book.get());
             commentRepository.save(comment);
         }
         return "redirect:/view/books/" + id;
@@ -57,7 +57,7 @@ public class BookViewController {
         if (book.isPresent()) {
             Rating rating = new Rating();
             rating.setScore(stars);
-            rating.setBook(book.get()); // przypisujemy książkę do oceny
+            rating.setBook(book.get());
             ratingRepository.save(rating);
         }
         return "redirect:/view/books/" + id;

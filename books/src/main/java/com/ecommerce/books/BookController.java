@@ -19,7 +19,7 @@ import java.util.Optional;
 public class BookController {
     @GetMapping
     public String showBooksPage(Model model) {
-        List<Book> books = bookRepository.findAll(); // Retrieve all books from the database
+        List<Book> books = bookRepository.findAll();
         model.addAttribute("books", books);
         return "books";
     }
