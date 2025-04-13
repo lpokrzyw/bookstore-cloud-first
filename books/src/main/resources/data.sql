@@ -49,3 +49,9 @@ VALUES (
     '"Innowatorzy Waltera Isaacsona to opowieść o ludziach, którzy stworzyli komputery i internet, ukazując, jak współpraca i kreatywność prowadzą do rewolucyjnych zmian. Autor przedstawia sylwetki pionierów, od Ady Lovelace po Steve’a Jobsa, analizując ich wpływ na świat.',
     79.00);
 
+INSERT INTO USERS (USERNAME, PASSWORD, ROLE)
+VALUES
+  ('admin', '$2a$12$HUvUJILdvohqdFbCtjBljeme05kGSQ.3pKeAgMbTdWQcPsBDZ7XmO', 'ROLE_ADMIN'),
+  ('user', '$2a$12$kjEJtEHtzDZcE3Bt1oeo2ORRgQZ1wdWxvRXKWZTrdRuj4GFxLUXx.', 'ROLE_USER'),
+  ('lukasz', '$2a$12$yPf/9tTMGypyV2uJiPKtv.YRgXDTHYLkePJDOcQ1go3QQtXgKd7AW', 'ROLE_USER');
+
