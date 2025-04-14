@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.ecommerce.books</groupId>
 	<artifactId>books</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>v1</version>
 	<name>books</name>
 	<description>Simple e-commerce app for master thesis</description>
 	<properties>
@@ -55,11 +55,6 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-    <!--    <dependency>
-            <groupId>jakarta.persistence</groupId>
-            <artifactId>jakarta.persistence-api</artifactId>
-            <version>3.1.0</version>
-        </dependency> -->
     </dependencies>
 
 	<build>
@@ -74,6 +69,9 @@
 							<artifactId>lombok</artifactId>
 						</exclude>
 					</excludes>
+					<image>
+						<name>bookstore-cloud-first</name>
+					</image>
 				</configuration>
 			</plugin>
 		</plugins>
