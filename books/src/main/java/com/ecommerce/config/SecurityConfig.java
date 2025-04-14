@@ -19,7 +19,7 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers(new AntPathRequestMatcher("/h2-console/**")).permitAll()
+                        //.requestMatchers(new AntPathRequestMatcher("/h2-console/**")).permitAll()
                         .anyRequest().authenticated()
                 )
                 .formLogin(formLogin -> formLogin
@@ -37,9 +37,9 @@ public class SecurityConfig {
                         .invalidSessionUrl("/login?invalid-session")
                         .maximumSessions(1)
                         .expiredUrl("/login?expired")
-                )
-                .csrf(csrf -> csrf.disable()) // not IN PROD - DLA BAZY h2
-                .headers(headers -> headers.disable()); // not IN PROD
+                );
+//                .csrf(csrf -> csrf.disable()) // not IN PROD - DLA BAZY h2
+//                .headers(headers -> headers.disable()); // not IN PROD
         return http.build();
     }
 
