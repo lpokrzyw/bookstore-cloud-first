@@ -4,17 +4,17 @@ ALTER COLUMN DESCRIPTION SET DATA TYPE VARCHAR(1024);
 INSERT INTO BOOKS (ID, TITLE, AUTHOR, DESCRIPTION, PRICE)
 VALUES (
     1,
-    'Pamięć nieulotna',
+    'Permanent Record',
     'Edward Snowden',
-    'Pamięć nieulotna to autobiografia Edwarda Snowdena, który ujawnił tajne informacje o globalnym systemie inwigilacji elektronicznej. Książka opisuje jego życie, motywy, refleksje na temat prywatności oraz wolności w erze cyfrowej',
+    'Permanent Record is Edward Snowden’s autobiography. He revealed classified information about a global electronic surveillance system. The book covers his life, motives, and thoughts on privacy and freedom in the digital age.',
     49.99);
 
 INSERT INTO BOOKS (ID, TITLE, AUTHOR, DESCRIPTION, PRICE)
 VALUES (
     2,
-    'Wojny w cyberprzestrzeni',
+    'Cyber Warfare',
     'Chase Cunningham',
-    'Książka, Wojny w cyberprzestrzeni autorstwa Chase Cunninghama analizuje cyfrowe pole walki, strategie obrony przed cyberatakami oraz ewolucję cyberprzestrzeni jako pola walki. Omawia motywy napastników, skutki ich działań i wskazówki ochrony systemów.',
+    'The book Cyber Warfare by Chase Cunningham analyzes the digital battlefield, defense strategies against cyberattacks, and the evolution of cyberspace as a war domain. It covers attackers’ motives, effects of their actions, and system protection tips.',
     63.00);
 
 INSERT INTO BOOKS (ID, TITLE, AUTHOR, DESCRIPTION, PRICE)
@@ -22,23 +22,23 @@ VALUES (
     3,
     'Indistractable',
     'Nir Eyal',
-    'Poradnik o odzyskiwaniu kontroli nad uwagą i życiem, analizujący przyczyny rozproszenia oraz oferujący praktyczne strategie. Autor przedstawia cztery techniki, które pomagają stać się nierozpraszalnym w dzisiejszym świecie pełnym bodźców.',
+    'A guide to regaining control over attention and life, exploring causes of distraction and offering practical strategies. The author presents four techniques to become indistractable in today’s stimulus-rich world.',
     61.99);
 
 INSERT INTO BOOKS (ID, TITLE, AUTHOR, DESCRIPTION, PRICE)
 VALUES (
     4,
-    'Metoda Lean Startup',
+    'The Lean Startup',
     'Eric Ries',
-    'Metoda Lean Startup Erica Riesa rewolucjonizuje tworzenie startupów, kładąc nacisk na szybkie testowanie hipotez i dostosowywanie się do rynku. Cykl buduj-mierz-ucz się minimalizuje ryzyko i zwiększa szanse na sukces, pozwalając na efektywne wykorzystanie zasobów.',
+    'The Lean Startup book revolutionizes startup creation by focusing on rapid hypothesis testing and market adaptation. The build-measure-learn loop reduces risk and boosts success chances through efficient resource use.',
     59.99);
 
 INSERT INTO BOOKS (ID, TITLE, AUTHOR, DESCRIPTION, PRICE)
 VALUES (
     5,
-    'Cyberbroń - broń doskonała',
+    'The Perfect Weapon',
     'David E. Sanger',
-    'Cyberbroń - broń doskonała Davida E. Sangera to analiza rosnącego znaczenia cyberprzestrzeni jako pola walki, gdzie cyfrowe narzędzia stają się potężną bronią. Autor opisuje, jak cyberataki wpływają na geopolitykę, gospodarkę i życie codzienne.',
+    'The Perfect Weapon by David E. Sanger analyzes the rise of cyberspace as a battlefield, where digital tools become powerful weapons. The author shows how cyberattacks impact geopolitics, the economy, and everyday life.',
     42.99);
 
 INSERT INTO BOOKS (ID, TITLE, AUTHOR, DESCRIPTION, PRICE)
@@ -46,7 +46,7 @@ VALUES (
     6,
     'Innovators ',
     'Walter Isaacson',
-    '"Innowatorzy Waltera Isaacsona to opowieść o ludziach, którzy stworzyli komputery i internet, ukazując, jak współpraca i kreatywność prowadzą do rewolucyjnych zmian. Autor przedstawia sylwetki pionierów, od Ady Lovelace po Steve’a Jobsa, analizując ich wpływ na świat.',
+    'The Innovators tells the story of the people who created computers and the internet, showing how collaboration and creativity drive change. He profiles pioneers from Ada Lovelace to Steve Jobs, exploring their impact.',
     79.00);
 
 INSERT INTO USERS (USERNAME, PASSWORD, ROLE)
