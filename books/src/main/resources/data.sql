@@ -6,7 +6,7 @@ VALUES (
     1,
     'Permanent Record',
     'Edward Snowden',
-    'Permanent Record is Edward Snowden’s autobiography. He revealed classified information about a global electronic surveillance system. The book covers his life, motives, and thoughts on privacy and freedom in the digital age.',
+    'Permanent Record is Edward Snowden autobiography. He revealed classified information about a global electronic surveillance system. The book covers his life, motives, and thoughts on privacy and freedom in the digital age.',
     49.99);
 
 INSERT INTO BOOKS (ID, TITLE, AUTHOR, DESCRIPTION, PRICE)
@@ -14,7 +14,7 @@ VALUES (
     2,
     'Cyber Warfare',
     'Chase Cunningham',
-    'The book Cyber Warfare by Chase Cunningham analyzes the digital battlefield, defense strategies against cyberattacks, and the evolution of cyberspace as a war domain. It covers attackers’ motives, effects of their actions, and system protection tips.',
+    'The book Cyber Warfare by Chase Cunningham analyzes the digital battlefield, defense strategies against cyberattacks, and the evolution of cyberspace as a war domain. It covers attackers motives, effects of their actions, and system protection tips.',
     63.00);
 
 INSERT INTO BOOKS (ID, TITLE, AUTHOR, DESCRIPTION, PRICE)
@@ -22,7 +22,7 @@ VALUES (
     3,
     'Indistractable',
     'Nir Eyal',
-    'A guide to regaining control over attention and life, exploring causes of distraction and offering practical strategies. The author presents four techniques to become indistractable in today’s stimulus-rich world.',
+    'A guide to regaining control over attention and life, exploring causes of distraction and offering practical strategies. The author presents four techniques to become indistractable in todays stimulus-rich world.',
     61.99);
 
 INSERT INTO BOOKS (ID, TITLE, AUTHOR, DESCRIPTION, PRICE)
